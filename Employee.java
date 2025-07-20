@@ -1,34 +1,47 @@
-public class Employee extends Person {
-	private double annualsalary;
-	private int startyear;
-	private String nationalinsurancenumber;
-	Employee(){
-		
-	}
-	Employee(String name,double annualsalary,int startyear,String nationalinsurancenumber ){
-		super(name);
-		this.annualsalary=annualsalary;
-		this.startyear=startyear;
-		this.nationalinsurancenumber=nationalinsurancenumber;
-	}
-	public double getAnnualsalary() {
-		return annualsalary;
-	}
-	public void setAnnualsalary(double annualsalary) {
-		this.annualsalary=annualsalary;
-	}
-	public int getStartyear() {
-		return startyear;
-	}
-	public void setStartyear(int startyear) {
-		this.startyear = startyear;
-	}
-	public String getNationalinsurancenumber() {
-		return nationalinsurancenumber;
-	}
-	public void setNationalinsurancenumber(String nationalinsurancenumber) {
-		this.nationalinsurancenumber = nationalinsurancenumber;
-	}
-	
+import java.io.*;
+import java.util.Date;
 
+class Employee implements Serializable {
+    private String name;
+    private Date dateOfBirth;
+    private String department;
+    private String designation;
+    private double salary;
+
+  
+    public Employee() {}
+
+  
+    public Employee(String name, Date dateOfBirth, String department, String designation, double salary) {
+        this.name = name;
+        this.dateOfBirth = dateOfBirth;
+        this.department = department;
+        this.designation = designation;
+        this.salary = salary;
+    }
+
+  
+    public String getName() { return name; }
+    public void setName(String name) { this.name = name; }
+
+    public Date getDateOfBirth() { return dateOfBirth; }
+    public void setDateOfBirth(Date dateOfBirth) { this.dateOfBirth = dateOfBirth; }
+
+    public String getDepartment() { return department; }
+    public void setDepartment(String department) { this.department = department; }
+
+    public String getDesignation() { return designation; }
+    public void setDesignation(String designation) { this.designation = designation; }
+
+    public double getSalary() { return salary; }
+    public void setSalary(double salary) { this.salary = salary; }
+
+   
+    public String toString() {
+        return "Name: " + name +
+               "\nDate of Birth: " + dateOfBirth +
+               "\nDepartment: " + department +
+               "\nDesignation: " + designation +
+               "\nSalary: " + salary;
+    }
 }
